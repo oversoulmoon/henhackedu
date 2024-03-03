@@ -39,6 +39,8 @@ def generate_transcript():
             try: 
                 os.remove(temp_audio_file)
                 os.remove(video_path)
+            except:
+                print("can't delete")
             return jsonify({'transcript': transcript})
         except sr.UnknownValueError:
             return jsonify({'error': 'Speech recognition could not understand audio'})

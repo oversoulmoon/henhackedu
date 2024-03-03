@@ -2,7 +2,7 @@ import React, { useState, FormEvent, useRef, useEffect } from 'react';
 import './Chatroom.css'
 import OpenAI from "openai";
 
-const openai = new OpenAI({apiKey: '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',dangerouslyAllowBrowser: true});
+const openai = new OpenAI({apiKey: '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',dangerouslyAllowBrowser: true});
 
 interface Message {
   id: number;

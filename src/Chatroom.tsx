@@ -2,7 +2,7 @@ import React, { useState, FormEvent, useRef, useEffect } from 'react';
 import './Chatroom.css'
 import OpenAI from "openai";
 
-const openai = new OpenAI({apiKey: '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',dangerouslyAllowBrowser: true});
+const openai = new OpenAI({apiKey: 'replace key here',dangerouslyAllowBrowser: true});
 
 interface Message {
   id: number;
@@ -17,7 +17,7 @@ const SmsInterface: React.FC<data> = (props) => {
   const divRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
-    //3️⃣ bring the last item into view        
+    //bring the last item into view        
     divRef.current?.lastElementChild?.scrollIntoView()
 }, [messages]);
 

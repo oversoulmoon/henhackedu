@@ -4,6 +4,7 @@ import './App.css';
 import OpenAI from "openai";
 import MenuBar from './Menu';
 import Card from './Card';
+import Footer from './Footer';
 
 const openai = new OpenAI({apiKey: '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',dangerouslyAllowBrowser: true});
 
@@ -72,27 +73,47 @@ function App() {
       setVideoUrl(videoUrl);
     }
   };
+
+const inputElement = document.createElement("input");
+inputElement.type = "text";
+inputElement.id = "myTextInput";
+inputElement.placeholder = "Enter text...";
+document.body.appendChild(inputElement);
+
+const buttonElement = document.createElement("button");
+buttonElement.textContent = "Explain";
+buttonElement.id = "myButton";
+buttonElement.addEventListener("click", function(event) {
+    console.log("Button clicked!");
+}
+);
+document.body.appendChild(buttonElement);
+
   return (
     <div className="App">
       <MenuBar items={menuItems} />
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
       <Card>
+        <h2>Transcript</h2>
+        <p>This is the transcript of your selected video.</p>
+        
+      </Card>
+
+      <Card>
         <h2>Upload Video</h2>
         <input type="file" accept="video/*" onChange={handleFileChange} />
-        {videoUrl && (<video style={{width: '100%'}} controls>
+        {videoUrl && (<video style={{width: '100'}} controls>
           <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
         </video>)}
       </Card>
 
       <Card>
-        <h2>Section 2</h2>
-        <p>This is the content of section 2.</p>
+        <h2>AI</h2>
+        <p>Let the AI further explain.</p>
+        
       </Card>
-      <Card>
-        <h2>Section 3</h2>
-        <p>This is the content of section 3.</p>
-      </Card>
+      <Footer/>
       </div>
     </div>
   );

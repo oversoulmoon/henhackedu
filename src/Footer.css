@@ -1,0 +1,10 @@
+.app-footer {
+    background-color: darkblue;
+    color: rgb(224, 198, 51);
+    text-align: center; /* Center the text */
+    margin: auto 0;
+    padding: 20px 0; /* Some padding */
+    position: fixed; /* Fix it at the bottom */
+    width: 100%; /* Full width */
+    bottom: 0; /* Stick to the bottom */
+}

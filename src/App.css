@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%; /* Aligns the button vertically at the center */
+  left: 86%; /* Aligns the button horizontally at the center */
+  transform: translate(-50%, -50%); /* Moves the button back by half of its width and height */
+}
+
+button:hover {
+  background-color: black;
+}
+
+button:active {
+  background-color: red;
+}
+
+input[type="text"] {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%; /* Aligns the button vertically at the center */
+  left: 19%; /* Aligns the button horizontally at the center */
+  transform: translate(-50%, -50%); /* Moves the button back by half of its width and height */
+}
+
+input[type="text"]:focus {
+  border-color: blue; 
+}

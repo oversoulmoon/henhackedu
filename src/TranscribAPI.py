@@ -9,35 +9,27 @@ app = Flask(__name__)
 CORS(app)
 @app.route('/transcript', methods=['POST'])
 def generate_transcript():
-    # Check if the POST request has the file part
     if 'file' not in request.files:
         return jsonify({'error': 'No file part'})
     
     file = request.files['file']
     
-    # Check if the file is not empty
     if file.filename == '':
         return jsonify({'error': 'No selected file'})
     
     if file:
-        # Save the file
         video_path = "temp_video.mp4"
         file.save(video_path)
         
-        # Initialize recognizer
         recognizer = sr.Recognizer()
         
-        # Open video file
         video = VideoFileClip(video_path)
         
-        # Extract audio from video
         audio = video.audio
         
-        # Convert audio to a temporary file
         temp_audio_file = "temp_audio.wav"
         audio.write_audiofile(temp_audio_file)
         
-        # Recognize speech using Google Web Speech API
         with sr.AudioFile(temp_audio_file) as source:
             audio_data = recognizer.record(source)
             

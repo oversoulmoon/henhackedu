@@ -8,7 +8,7 @@ import ChatRoom from './Chatroom';
 function App() {
 
   const [videoUrl, setVideoUrl] = useState<string>('http://localhost:3000');
-  const [key, setKey] = useState<number>(0); // Add a key state to force video reload
+  const [key, setKey] = useState<number>(0);
   const [VideoName, setVideoName] = useState<string>('Empty');
 
   const menuItems = [
@@ -24,7 +24,7 @@ function App() {
       const videoUrl = URL.createObjectURL(file);
       setVideoName(file.name)
       setVideoUrl(videoUrl);
-      setKey(prevKey => prevKey + 1); // Increment key to force video element to reload
+      setKey(prevKey => prevKey + 1);
 
       try {
         const response = await axios.post('http://localhost:1743/transcript', formData, {

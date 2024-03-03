@@ -13,19 +13,39 @@ Brief description of your project.
 
 ## About
 
-Briefly describe your project and its purpose. Provide context about why you built it and who it's for.
+This project aims to help further incorporate AI into learning. This projects takes in a video, generate its transcript using openai-whisper library and using openai api to answer user's question. 
 
 ## Features
 
 List the key features of your project.
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Video Transcription
+- Answer user's question based on the video
+- Resuable transcription APi
 
 ## Installation
-
-Provide instructions on how to install and set up your project locally. Include any prerequisites or dependencies required.
-
+Clone the repo: 
 ```bash
-npm install
+git clone https://github.com/oversoulmoon/henhackedu.git
+```
+Move into the repo:
+```
+cd henhackedu
+```
+Install required packages:
+```
+npm install && pip install SpeechRecognition Flask moviepy flask_cors -U openai-whisper 
+```
+Start Transcription API: 
+```
+python src/TranscribAPI.py
+```
+In another terminal in the directory, start webapp:
+```
+npm start
+```
+
+## Usage
+Click the upload button and upload a video, then wait for transcript genernation.
+## Contributing
+Trung Nguyen, Araf Jahin, Ben Scott, Ayman Tayeb

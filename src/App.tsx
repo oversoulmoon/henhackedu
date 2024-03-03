@@ -99,3 +99,42 @@ function App() {
 }
 
 export default App;
+
+//
+
+// import React, { useState } from 'react';
+// import axios from 'axios';
+
+// const VideoUpload: React.FC = () => {
+//   const [transcript, setTranscript] = useState<string | null>(null);
+
+//   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+//     const file = event.target.files ? event.target.files[0] : null;
+//     if (file) {
+//       const formData = new FormData();
+//       formData.append('file', file);
+
+//       try {
+//         const response = await axios.post('http://localhost:5000/transcript', formData, {
+//           headers: {
+//             'Content-Type': 'multipart/form-data',
+//           },
+//         });
+//         console.log(response.data.transcript)
+//         setTranscript(response.data.transcript.text);
+//       } catch (error) {
+//         console.error('Error uploading file:', error);
+//       }
+//     }
+//   };
+
+
+//   return (
+//     <div>
+//       <input type="file" onChange={handleFileUpload} />
+//       {transcript && <div><strong>Transcript:</strong> {transcript}</div>}
+//     </div>
+//   );
+// };
+
+// export default VideoUpload;

@@ -1,6 +1,6 @@
-# Project Name
+# VidExplainAI
 
-Brief description of your project.
+A webapp to help you go through video lectures
 
 ## Table of Contents
 

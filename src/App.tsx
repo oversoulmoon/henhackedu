@@ -5,6 +5,7 @@ import OpenAI from "openai";
 import MenuBar from './Menu';
 import Card from './Card';
 import axios from 'axios';
+import ChatRoom from './Chatroom';
 // const openai = new OpenAI({apiKey: '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',dangerouslyAllowBrowser: true});
 
 // const OpenAIQuestionAnswering: React.FC = () => {
@@ -113,7 +114,7 @@ function App() {
     { title: 'Services', link: '#services' },
     { title: 'Contact', link: '#contact' }
   ];
-    const [transcript, setTranscript] = useState<string | null>(null);
+    const [transcript, setTranscript] = useState<string>("");
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -134,7 +135,7 @@ function App() {
       setKey(prevKey => prevKey + 1); // Increment key to force video element to reload
 
       try {
-        const response = await axios.post('http://localhost:5000/transcript', formData, {
+        const response = await axios.post('http://localhost:1743/transcript', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -156,6 +157,7 @@ function App() {
           <Card>
           <input type="file" accept="video/*" id="actual-btn" onChange={handleFileUpload} hidden/>
           <label id="upload-btn" htmlFor="actual-btn">UPLOAD VIDEO</label>
+          <ChatRoom></ChatRoom>
           </Card>
         </div>
         <div className="three">        
@@ -169,8 +171,11 @@ function App() {
         </div>
         <div className="four">        
           <Card>
-            test
-          </Card></div>
+          <form>
+            <textarea id='transcription' value={transcript} readOnly></textarea>
+          </form>
+          </Card>
+          </div>
       </div>
     </div>
   );

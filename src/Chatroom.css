@@ -1,0 +1,62 @@
+.chat-room {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .message {
+    background-color: #f1f0f0;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    max-width: 70%;
+  }
+  
+  .message.received {
+    align-self: flex-start;
+  }
+  
+  .message.sent {
+    align-self: flex-end;
+  }
+
+  
+
+  
+  .input-container button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .input-container button:hover {
+    background-color: #0056b3;
+  }
+  
+.chatroom-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Use viewport height to fill the screen */
+}
+
+.messages-container {
+  flex: 1;
+  overflow-y: auto; /* Makes this part scrollable */
+  padding: 10px;
+  border-bottom: 1px solid #ccc; /* Just for visibility */
+}
+
+.input-container {
+  padding: 10px;
+  background: #f0f0f0; /* Slightly different background for contrast */
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box; /* Ensures padding doesn't add to the width */
+}

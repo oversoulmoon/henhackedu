@@ -1,62 +1,70 @@
-.chat-room {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+.sms-interface {
+  max-width:auto;
+  margin: 0 auto;
+  padding: 1rem;
+  max-height: 30rem;
+}
 
-  .message {
-    background-color: #f1f0f0;
-    padding: 8px 12px;
-    margin-bottom: 8px;
-    border-radius: 12px;
-    max-width: 70%;
-  }
-  
-  .message.received {
-    align-self: flex-start;
-  }
-  
-  .message.sent {
-    align-self: flex-end;
-  }
-
-  
-
-  
-  .input-container button {
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .input-container button:hover {
-    background-color: #0056b3;
-  }
-  
-.chatroom-container {
+.messages {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Use viewport height to fill the screen */
+  overflow-y: auto;
+  max-width: 100%;
+  max-height: 30rem;
 }
 
-.messages-container {
+.message {
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  max-width: 70%;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.message {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.message.user {
+  align-self: flex-end;
+  display: block;
+  background-color:#3182CE;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #E0E0E0;
+}
+
+.message-form {
+  display: flex;
+}
+
+.message-input {
   flex: 1;
-  overflow-y: auto; /* Makes this part scrollable */
   padding: 10px;
-  border-bottom: 1px solid #ccc; /* Just for visibility */
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  margin: auto;
+  margin-top: 1rem;
 }
 
-.input-container {
-  padding: 10px;
-  background: #f0f0f0; /* Slightly different background for contrast */
+.send-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 1rem;
+
 }
 
-.input-container input {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box; /* Ensures padding doesn't add to the width */
+.send-button:hover {
+  background-color: #0056b3;
 }

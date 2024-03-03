@@ -43,7 +43,7 @@ def generate_transcript():
             
         try:
             model = whisper.load_model("tiny")
-            transcript = model.transcribe("src/t.mp4")
+            transcript = model.transcribe(temp_audio_file)
             return jsonify({'transcript': transcript})
         except sr.UnknownValueError:
             return jsonify({'error': 'Speech recognition could not understand audio'})

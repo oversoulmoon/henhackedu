@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./Menu.css";
 interface MenuItem {
   title: string;
   link: string;
